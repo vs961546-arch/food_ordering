@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Food Ordering and Delivery System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Food Ordering and Delivery System</h1>
+    <p class="tagline">Order from the menu &middot; prices in &#8377; (INR)</p>
+  </header>
+
+  <main>
+    <!-- Menu: filled in by app.js from GET /api/food -->
+    <section id="menu-section">
+      <h2>Menu</h2>
+      <div id="menu" class="menu"></div>
+    </section>
+
+    <aside>
+      <!-- Cart + checkout form -->
+      <section id="cart-section">
+        <h2>Your cart</h2>
+        <ul id="cart" class="cart"></ul>
+        <p id="cart-total" class="total">Total: &#8377;0.00</p>
+
+        <form id="checkout-form">
+          <h3>Delivery details</h3>
+          <label>Name *
+            <input id="cust-name" required maxlength="100" placeholder="Your name">
+          </label>
+          <label>Phone
+            <input id="cust-phone" maxlength="20" placeholder="Optional">
+          </label>
+          <label>Email
+            <input id="cust-email" type="email" maxlength="255" placeholder="Optional">
+          </label>
+          <label>Address
+            <textarea id="cust-address" rows="2" maxlength="500" placeholder="Optional"></textarea>
+          </label>
+          <button type="submit" id="place-order">Place order</button>
+        </form>
+      </section>
+
+      <!-- Order lookup -->
+      <section id="lookup-section">
+        <h2>Track order</h2>
+        <div class="lookup">
+          <input id="lookup-id" type="number" min="1" placeholder="Order ID">
+          <button id="lookup-btn" type="button">Find</button>
+        </div>
+        <pre id="lookup-result"></pre>
+      </section>
+    </aside>
+  </main>
+
+  <div id="message" class="message" hidden></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
